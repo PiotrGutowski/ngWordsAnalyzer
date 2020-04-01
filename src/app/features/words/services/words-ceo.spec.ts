@@ -1,5 +1,5 @@
 import { SelectedUrlStore } from '@core/store/selected-url.store';
-import { WordsService } from '@data-access/words.service';
+import { WordsService } from '@data-access/services/words.service';
 import { TestBed } from '@angular/core/testing';
 import { WordsCeo } from './words-ceo';
 import { HttpClient, HttpClientModule } from '@angular/common/http';

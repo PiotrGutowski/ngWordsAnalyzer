@@ -1,5 +1,7 @@
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { GetDistinctWordsResponseDto } from '@data-access/models/words-types';
+import { GetDistinctWordsResponseContentDto } from '@data-access/models/words-types';
 import { Observable } from 'rxjs';
-import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-words-view',
@@ -8,10 +10,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WordsViewComponent implements OnInit {
 
-  @Input() distinctWords$: Observable<string[]>;
+  isKnown: boolean;
+  @Input() distinctWords$: Observable<GetDistinctWordsResponseDto>;
+  @Output() updateSelectedWord: EventEmitter<GetDistinctWordsResponseContentDto> =
+    new EventEmitter<GetDistinctWordsResponseContentDto>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  manageSelectedWord(item: GetDistinctWordsResponseContentDto): void {
+    this.updateSelectedWord.emit(item);
+  }
+
+  setKnownIcon(isKnown: boolean): string {
+    return isKnown ? 'thumb_up_alt' : 'thumb_down';
+  }
+
+  trackByWord(index, item) {
+    return index;
+  }
 }

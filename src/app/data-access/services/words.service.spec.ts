@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { WordsService } from './words.service';
+import { WordsService } from '../words.service';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('WordsService', () => {

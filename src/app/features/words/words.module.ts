@@ -1,3 +1,4 @@
+import { MaterialModule } from './../../material/material.module';
 import { WordsRoutingModule } from './words-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,7 @@ import { WordsViewComponent } from './words-view/words-view.component';
   declarations: [WordsContainerComponent, WordsViewComponent],
   imports: [
     CommonModule,
+    MaterialModule,
     WordsRoutingModule
   ]
 })

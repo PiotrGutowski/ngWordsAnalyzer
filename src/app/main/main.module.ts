@@ -1,3 +1,4 @@
+import { LayoutModule } from './../layout/layout.module';
 import { MaterialModule } from './../material/material.module';
 import { WelcomeModule } from './../features/welcome/welcome.module';
 import { MainRoutingModule } from './main-routing.module';
@@ -11,7 +12,9 @@ import { StartComponent } from './start/start.component';
     CommonModule,
     MaterialModule,
     WelcomeModule,
+    LayoutModule,
     MainRoutingModule
+
   ]
 })
 export class MainModule { }

@@ -1,0 +1,46 @@
+.icon-right {
+  flex: 1 1 auto;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-container {
+  display: flex;
+  width: 65vw;
+  height: 8vh;
+  justify-content: left;
+}
+
+.topbar {
+  position: fixed;
+  display: flex;
+  justify-content: left;
+  top: 0;
+  position: sticky;
+  z-index: 999;
+  height: 8vh;
+  background-color: #2b3648;
+}
+
+a {
+  margin: auto;
+  display: flex;
+}
+
+mat-icon {
+  font-size: 30px;
+  height: 30px;
+  width: 30px;
+  color: white;
+}
+
+mat-icon:hover {
+  color: #ffb600;
+}
+
+.mat-list-base {
+  padding: 0px;
+}

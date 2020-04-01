@@ -16,6 +16,7 @@ export class WelcomeContainerComponent implements OnInit {
   }
 
   getPageUrl(): void {
+    console.log(this.router, 'router');
     this.welcomeCeo.getPageUrl();
     this.router.navigate(['words']);
   }

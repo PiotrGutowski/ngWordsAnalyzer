@@ -1,6 +1,27 @@
-.container {
+.flex-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
   justify-content: center;
-  margin: 16px;
+}
+
+// @media screen and (max-width: 768px) {
+//   .container {
+//     width: 96vw;
+//     display: flex;
+//     justify-content: center;
+//   }
+// }
+
+.flex-item-one {
+  flex-grow: 1;
+  width: 4vw;
+}
+.flex-item-two {
+  flex-grow: 1;
+  width: 96vw;
 }

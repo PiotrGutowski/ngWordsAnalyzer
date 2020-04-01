@@ -1,3 +1,19 @@
-<ng-container *ngFor="let item of distinctWords$ | async">
-  <div>{{item}}</div>
-</ng-container>
+<div class="header-container">
+  <div class="text-container">Words</div>
+</div>
+<div class='container' *ngIf="(distinctWords$ | async) as distinctWords">
+  <mat-list>
+    <mat-list-item class="mat-list-size" *ngFor="let item of distinctWords.content; trackBy: trackByWord ">
+      <mat-icon class="circle-icon" mat-list-icon>{{setKnownIcon(item.known)}}</mat-icon>
+      <div mat-line>{{item.word}}</div>
+      <div mat-line> translation</div>
+      <div class="buttons-container">
+        <button mat-raised-button class="white-button" (click)="manageSelectedWord(item)">
+          <mat-icon>update</mat-icon>
+        </button>
+      </div>
+
+    </mat-list-item>
+  </mat-list>
+
+</div>
