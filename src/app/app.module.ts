@@ -1,3 +1,4 @@
+import { UtilsModule } from './utils/utils.module';
 import { LayoutModule } from './layout/layout.module';
 import { MaterialModule } from './material/material.module';
 import { DataAccessModule } from './data-access/data-access.module';
@@ -18,7 +19,8 @@ import { AppComponent } from './app.component';
     MaterialModule,
     LayoutModule,
     AppRoutingModule,
-    DataAccessModule
+    DataAccessModule,
+    UtilsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

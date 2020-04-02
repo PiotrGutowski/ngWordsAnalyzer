@@ -1,3 +1,4 @@
+import { BackgroundUrlService } from '@utils/services/background-url.service';
 import { Injectable } from '@angular/core';
 import { SelectedUrlState } from '@core/store/selected-url.state';
 import { SelectedUrlStore } from '@core/store/selected-url.store';
@@ -14,13 +15,14 @@ export class WordsCeo {
   constructor(
     private wordsService: WordsService,
     private distinctWordsStore: DistinctWordsStore,
+    private backgroundUrlService: BackgroundUrlService,
     private selectedUrlStore: SelectedUrlStore) { }
 
   getAllDistinctWords$(): void {
     this.getUrlFromStore$().pipe(
       map(data => {
         console.log(data.selectedUrl, 'data');
-        return data.selectedUrl.substring(data.selectedUrl.lastIndexOf('=') + 1);
+        return this.backgroundUrlService.getYouTubeSelectedMovieId(data.selectedUrl);
       }),
       concatMap(url => this.getAllDistinctWordsFromPage$(url)))
       .subscribe(data => this.storeDistinctWords(data));

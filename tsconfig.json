@@ -15,7 +15,8 @@
     "paths": {
       "@features/*": ["../src/app/features/*"],
       "@core/*": ["./src/app/core/*"],
-      "@data-access/*": ["./src/app/data-access/*"]
+      "@data-access/*": ["./src/app/data-access/*"],
+      "@utils/*": ["./src/app/utils/*"]
     }
   },
   "angularCompilerOptions": {
